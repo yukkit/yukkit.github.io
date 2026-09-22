@@ -4,59 +4,180 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Yujie Zhang's personal homepage">
+    <link rel="icon" href="data:,">
     <title>Yujie Zhang</title>
     <style>
       :root {
-        color-scheme: light dark;
-        font-family: system-ui, sans-serif;
+        font-family: "Helvetica Neue", Arial, "Noto Sans CJK SC", "PingFang SC", sans-serif;
+        color: #1c2936;
+        background: #fafbfc;
+        line-height: 1.6;
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       body {
-        display: grid;
-        min-height: 100vh;
         margin: 0;
-        place-items: center;
       }
 
-      main {
-        width: min(32rem, calc(100% - 3rem));
+      .page {
+        max-width: 58rem;
+        margin: 0 auto;
+        padding: clamp(2rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 3rem);
+      }
+
+      header {
+        padding-bottom: 2.5rem;
+        border-bottom: 2px solid #1c2936;
       }
 
       h1 {
-        margin-bottom: 0.5rem;
+        margin: 0 0 1.5rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.7rem, 7vw, 4rem);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
       }
 
-      h2 {
-        margin-top: 2rem;
+      address {
+        font-style: normal;
+      }
+
+      .contacts,
+      .entries {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.75rem;
+      }
+
+      .contacts li {
+        min-width: 0;
+      }
+
+      .contacts span {
+        display: block;
+        color: #526272;
+        font-size: 0.85rem;
       }
 
       a {
-        color: inherit;
+        color: #145a78;
+        text-underline-offset: 0.2em;
+        overflow-wrap: anywhere;
       }
 
-      li {
-        margin: 0.75rem 0;
+      a:hover {
+        color: #0d3d52;
+      }
+
+      a:focus-visible {
+        outline: 2px solid #145a78;
+        outline-offset: 4px;
+      }
+
+      section {
+        margin-top: 3rem;
+      }
+
+      h2 {
+        margin: 0 0 1.25rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.03em;
+      }
+
+      .entries li {
+        display: grid;
+        grid-template-columns: 10rem minmax(0, 1fr);
+        gap: 0.5rem 1.5rem;
+        padding: 1.25rem 0;
+        border-top: 1px solid #d8e0e6;
+      }
+
+      .period {
+        margin: 0;
+        color: #526272;
+        font-size: 0.9rem;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .role {
+        margin: 0.25rem 0 0;
+        color: #394b5c;
+      }
+
+      @media (max-width: 38rem) {
+        .entries li {
+          grid-template-columns: 1fr;
+          gap: 0.25rem;
+        }
+
+        .period {
+          grid-row: 2;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <h1>Yujie Zhang</h1>
-      <h2>Contact</h2>
-      <ul>
-        <li><a href="mailto:yukkit@126.com">yukkit@126.com</a></li>
-        <li><a href="mailto:yjzhang@cse.cuhk.edu.hk">yjzhang@cse.cuhk.edu.hk</a></li>
-      </ul>
-      <p>GitHub: <a href="https://github.com/yukkit">@yukkit</a></p>
+    <div class="page">
+      <header>
+        <h1>Yujie Zhang</h1>
+        <address>
+          <ul class="contacts">
+            <li><span>University email</span><a href="mailto:yjzhang@cse.cuhk.edu.hk">yjzhang@cse.cuhk.edu.hk</a></li>
+            <li><span>Personal email</span><a href="mailto:yukkit@126.com">yukkit@126.com</a></li>
+            <li><span>GitHub</span><a href="https://github.com/yukkit">github.com/yukkit</a></li>
+          </ul>
+        </address>
+      </header>
 
-      <h2>Career &amp; Education</h2>
-      <ul>
-        <li><strong>The Chinese University of Hong Kong</strong> · 2026–Present · Research Assistant</li>
-        <li><strong>启思码(北京)科技有限公司</strong> · 2024–Present · Graph Database Kernel Engineer</li>
-        <li><strong>北京诺司时空科技有限公司</strong> · 2022/08–2023/12 · Database Kernel Engineer</li>
-        <li><strong>北京聚云位智信息科技有限公司</strong> · 2018/11–2022/08 · Database R&amp;D Engineer → Leader, Database R&amp;D Group → Database Kernel Engineer</li>
-        <li><strong>Heilongjiang University</strong> · 2014–2018 · Undergraduate Student</li>
-      </ul>
-    </main>
+      <main>
+        <section aria-labelledby="experience-heading">
+          <h2 id="experience-heading">Experience</h2>
+          <ul class="entries">
+            <li>
+              <p class="period">2026 – Present</p>
+              <div><h3>The Chinese University of Hong Kong</h3><p class="role">Research Assistant</p></div>
+            </li>
+            <li>
+              <p class="period">2024 – Present</p>
+              <div><h3 lang="zh-CN">启思码(北京)科技有限公司</h3><p class="role">Graph Database Kernel Engineer</p></div>
+            </li>
+            <li>
+              <p class="period">Aug 2022 – Dec 2023</p>
+              <div><h3 lang="zh-CN">北京诺司时空科技有限公司</h3><p class="role">Database Kernel Engineer</p></div>
+            </li>
+            <li>
+              <p class="period">Nov 2018 – Aug 2022</p>
+              <div><h3 lang="zh-CN">北京聚云位智信息科技有限公司</h3><p class="role">Database R&amp;D Engineer → Leader, Database R&amp;D Group → Database Kernel Engineer</p></div>
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+          <ul class="entries">
+            <li>
+              <p class="period">2014 – 2018</p>
+              <div><h3>Heilongjiang University</h3><p class="role">Undergraduate Student</p></div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
